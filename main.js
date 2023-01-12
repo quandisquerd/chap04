@@ -1,0 +1,17 @@
+import menu from "./exemple/header";
+import about from "./exemple/about";
+import contact from "./exemple/contact";
+import block from "./exemple/block";
+import { inp, out } from "./lib";
+import { image } from "./exemple/home";
+import { myprofile } from "./exemple/myrofile";
+import notfound from "./exemple/notfound";
+// import { image } from "./exemple/header";
+const app= document.querySelector("#app");
+out.on("/", ()=>inp (image,app));
+out.on("/myprofile",()=>inp (myprofile,app));
+out.on("/about", ()=>inp (about,app));
+out.on("/contact", ()=>inp (contact,app));
+out.on("/block", () => inp(block,app));
+out.notFound(()=>inp(notfound,app));
+out.resolve();
